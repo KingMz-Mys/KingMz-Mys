@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      background-color: black;
+      background-image: url('background.jpg');
+      background-size: cover;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .login-container {
+      width: 300px;
+      margin: 100px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 4px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 4px;
+      background: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="submit" value="Login">
+    </form>
+    <p id="error" style="color:red;"></p>
+  </div>
+  <script>
+    if (!localStorage.getItem('loginUsername')) {
+      localStorage.setItem('loginUsername', 'CustomerVip');
+    }
+    if (!localStorage.getItem('loginPassword')) {
+      localStorage.setItem('loginPassword', 'CustomerVVIP1');
+    }
+    
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var storedUsername = localStorage.getItem('loginUsername');
+      var storedPassword = localStorage.getItem('loginPassword');
+      if (username === storedUsername && password === storedPassword) {
+        window.location.href = 'main.html';
+      } else {
+        document.getElementById('error').innerText = 'Username atau password tidak valid';
+      }
+    });
+  </script>
+</body>
+</html>
