@@ -1,0 +1,32 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('assets/background.jpg');
+  background-size: cover;
+  color: white;
+}
+.login-box {
+  width: 300px;
+  margin: 100px auto;
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+.container {
+  text-align: center;
+  margin-top: 100px;
+}

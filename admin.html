@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - Change Credentials</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-box">
+    <h2>Admin - Change Login</h2>
+    <input type="text" id="newUsername" placeholder="New Username">
+    <input type="text" id="newPassword" placeholder="New Password">
+    <button onclick="saveCredentials()">Save</button>
+    <p id="status"></p>
+  </div>
+  <script>
+    function saveCredentials() {
+      const username = document.getElementById('newUsername').value;
+      const password = document.getElementById('newPassword').value;
+      const data = { username, password };
+      fetch('config.json', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      }).then(() => {
+        document.getElementById('status').innerText = 'Saved!';
+      }).catch(() => {
+        document.getElementById('status').innerText = 'Failed to save.';
+      });
+    }
+  </script>
+</body>
+</html>
