@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel - Secure</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff0000, #ffffff);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: #fff;
+    }
+    .box, .login-box {
+      background: rgba(0,0,0,0.7);
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      background: #fff;
+      color: #000;
+      padding: 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="login" class="login-box">
+    <h2>Admin Login</h2>
+    <input type="text" id="adminUser" placeholder="Username"><br>
+    <input type="password" id="adminPass" placeholder="Password"><br>
+    <button onclick="verifyLogin()">Login</button>
+  </div>
+
+  <div id="adminPanel" class="box" style="display:none;">
+    <h2>Welcome, Admin</h2>
+    <button onclick="generate()">Generate New Password</button>
+    <div id="output">Generated password will appear here</div>
+  </div>
+
+  <script>
+    const USER = 'AdminKing';
+    const PASS = 'PredictVIP2025';
+
+    function verifyLogin() {
+      const user = document.getElementById('adminUser').value;
+      const pass = document.getElementById('adminPass').value;
+      if (user === USER && pass === PASS) {
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('adminPanel').style.display = 'block';
+      } else {
+        alert("Wrong username or password!");
+      }
+    }
+
+    function generate() {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let pass = '';
+      for (let i = 0; i < 10; i++) {
+        pass += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      document.getElementById('output').innerText = pass;
+    }
+  </script>
+</body>
+</html>
