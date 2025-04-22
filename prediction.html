@@ -2,17 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Live Prediction</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Wingo Prediction</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="prediction-page" style="background-image: url('assets/background.jpg');">
-  <div class="header">Prediction MZPLAY / MYSGAMES</div>
-  <div class="container">
-    <div class="prediction" id="pred">Loading prediction...</div>
-    <div>Period: <span id="period">0</span></div>
-    <div>Time Left: <span id="timer">60</span> seconds</div>
-    <div class="prediction" id="winrate">Winrate: --%</div>
-  </div>
-  <script src="script.js"></script>
+<body class="dashboard-page">
+  <header>
+    <h1>Live Wingo Prediction</h1>
+    <div class="time-period">
+      <span id="period">Period: #000000</span>
+      <span id="countdown">Next in: 00:60</span>
+    </div>
+  </header>
+
+  <main class="predictions">
+    <div class="card">
+      <h3>Big / Small</h3>
+      <p class="prediction-text">BIG</p>
+    </div>
+    <div class="card">
+      <h3>Color</h3>
+      <p class="prediction-text">RED</p>
+    </div>
+    <div class="card">
+      <h3>Number</h3>
+      <p class="prediction-text">7</p>
+    </div>
+    <div class="card">
+      <h3>Winrate</h3>
+      <div class="winrate-bar"><div class="fill" style="width: 70%"></div></div>
+      <p class="winrate-text">70%</p>
+    </div>
+  </main>
 </body>
 </html>
