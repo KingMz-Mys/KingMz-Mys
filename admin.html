@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - Change Password</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Change Login Credentials</h2>
+  <form id="adminForm">
+    <input type="text" id="newUser" placeholder="New Username" required>
+    <input type="password" id="newPass" placeholder="New Password" required>
+    <button type="submit">Save</button>
+  </form>
+  <p class="watermark">made by Predict _king11</p>
+  <script>
+    document.getElementById('adminForm').onsubmit = function(e) {
+      e.preventDefault();
+      const newUser = document.getElementById('newUser').value;
+      const newPass = document.getElementById('newPass').value;
+      localStorage.setItem('username', newUser);
+      localStorage.setItem('password', newPass);
+      alert('Username dan Password berhasil diubah!');
+    };
+  </script>
+</body>
+</html>
