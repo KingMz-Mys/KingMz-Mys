@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Ganti Password</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <h2>Admin Panel</h2>
+    <form class="admin-form">
+      <input type="password" placeholder="Password Baru" required />
+      <button type="submit">Update Password</button>
+    </form>
+    <p style="margin-top: 20px;">* Password login akan diperbarui</p>
+  </div>
+  <script>
+    document.querySelector(".admin-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const newPassword = this[0].value;
+      localStorage.setItem("wingoPassword", newPassword);
+      alert("Password berhasil diperbarui!");
+    });
+  </script>
+</body>
+</html>
