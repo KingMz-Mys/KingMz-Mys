@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wingo Live Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.85);
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+        }
+        h1, h2 {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wingo 1-Minute Live Prediction</h1>
+        <h2 id="time">Time: </h2>
+        <h2 id="period">Period: </h2>
+        <h2 id="prediction">Prediction: </h2>
+        <h2 id="winrate">Winrate: </h2>
+    </div>
+
+    <script>
+        function updateData() {
+            const now = new Date();
+            document.getElementById('time').innerText = "Time: " + now.toLocaleTimeString();
+            document.getElementById('period').innerText = "Period: " + Math.floor(now.getTime() / 60000);
+            
+            const bigSmall = Math.random() > 0.5 ? "BIG" : "SMALL";
+            const color = Math.random() > 0.5 ? "GREEN" : "RED";
+            const number = Math.floor(Math.random() * 10);
+            document.getElementById('prediction').innerText = `Prediction: ${bigSmall} / ${color} / ${number}`;
+
+            const winrate = Math.floor(Math.random() * 51) + 50;
+            document.getElementById('winrate').innerText = "Winrate: " + winrate + "%";
+        }
+
+        updateData();
+        setInterval(updateData, 60000);
+    </script>
+</body>
+</html>

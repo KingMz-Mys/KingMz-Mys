@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Wingo Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .login-container {
+            background: rgba(0, 0, 0, 0.8);
+            width: 300px;
+            padding: 20px;
+            margin: 100px auto;
+            border-radius: 10px;
+            text-align: center;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            width: 95%;
+            padding: 10px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="error-msg" style="color:red;"></p>
+    </div>
+    <script>
+        async function login() {
+            const response = await fetch('credentials.json');
+            const creds = await response.json();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+
+            if (user === creds.username && pass === creds.password) {
+                window.location.href = 'home.html';
+            } else {
+                document.getElementById('error-msg').innerText = "Invalid credentials";
+            }
+        }
+    </script>
+</body>
+</html>
