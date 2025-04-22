@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin - Change Password</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+  <div class="login-container">
+    <h2>Change Login Password</h2>
+    <form id="adminForm">
+      <input type="text" id="newUser" placeholder="New Username"><br>
+      <input type="password" id="newPass" placeholder="New Password"><br>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('adminForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.getElementById('newUser').value;
+      const pass = document.getElementById('newPass').value;
+
+      fetch('config.json', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: user, password: pass })
+      }).then(() => alert('Saved successfully'));
+    });
+  </script>
+</body>
+</html>
