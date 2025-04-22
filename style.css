@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+input, button {
+  padding: 10px;
+  margin: 5px;
+}
+.container {
+  margin-top: 50px;
+}
+.prediction {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+.watermark {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0.5;
+  font-size: 0.9em;
+}
