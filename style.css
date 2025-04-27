@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('background/dark-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.login-page, .home-page, .admin-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-box, .admin-box {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00f7ff;
+    text-align: center;
+    animation: fadeIn 2s ease;
+}
+
+input, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input {
+    background: #222;
+    color: #fff;
+}
+
+button {
+    background: #00f7ff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #00d0cc;
+}
+
+.prediction-box, .result-box {
+    background: rgba(0, 0, 0, 0.7);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeInUp 2s ease;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeInUp {
+    from {transform: translateY(20px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
