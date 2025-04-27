@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-form">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="prediction-container" style="display:none;">
+        <h2>Live Prediction</h2>
+        <p id="timer"></p>
+        <p id="prediction">Prediction: <span id="prediction-value">Waiting...</span></p>
+        <p id="status">Waiting Next Period...</p>
+        <div id="loading" style="display:none;">Loading...</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
