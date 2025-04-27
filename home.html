@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Prediction Wingo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+    <div class="header">
+        <h1>Live Prediction Wingo</h1>
+        <div id="period"></div>
+        <div id="timer"></div>
+    </div>
+
+    <div class="prediction-box">
+        <h2>Prediction</h2>
+        <p>Big/Small: <span id="bigSmall">-</span></p>
+        <p>Color: <span id="color">-</span></p>
+        <p>Number: <span id="number">-</span></p>
+        <p>Winrate: <span id="winrate">-</span></p>
+    </div>
+
+    <div class="result-box">
+        <h2>Result</h2>
+        <p id="result">Waiting...</p>
+    </div>
+
+    <audio id="winSound" src="sounds/win.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
