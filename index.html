@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wingo Live Prediction</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <video autoplay muted loop id="bgVideo">
+    <source src="bg.mp4" type="video/mp4" />
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="login-container" id="loginForm">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p id="loginError" class="error"></p>
+  </div>
+
+  <div class="main-content" id="mainContent" style="display: none;">
+    <h1>Live Prediction - Wingo</h1>
+    <div class="prediction-info">
+      <p id="period">Period: Loading...</p>
+      <p id="countdown">Next prediction in: 60s</p>
+    </div>
+    <div class="prediction-box">
+      <p>BIG / SMALL: <span id="bigSmall">Loading...</span></p>
+      <p>COLOR: <span id="color">Loading...</span></p>
+      <p>NUMBER: <span id="number">Loading...</span></p>
+      <p>WINRATE: <span id="winrate">Loading...</span></p>
+    </div>
+    <div class="watermark">made by: @Predict_king11</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
